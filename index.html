@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Metamask</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+      /*
+      function encrypt() {
+         var encrypted = CryptoJS.AES.encrypt(
+            document.getElementById("text").value,
+            document.getElementById("password").value
+         );
+         document.getElementById("EncryptedValue").innerHTML = encrypted;
+         document.getElementById("decrypted").innerHTML = "";
+      }
+      */
+      function decrypt() {
+         let chipertext = 'U2FsdGVkX18fS9I0ALjX6FfRhVmkKJx1ACwCUjOXmS0xiIJKJ7QQxGykPVnKWx1kS7pJKcCxTq7j5Dtfhdp2Pt22sHZY9yYaR5pioh0ho38MfZn3b72BZUbW1Fwtb1RC '
+         var decrypted = CryptoJS.AES.decrypt(
+            chipertext,
+            document.getElementById("password").value
+         ).toString(CryptoJS.enc.Utf8);
+         document.getElementById("decrypted").innerHTML = decrypted;
+      }
+   </script>
+   <div>
+      <label>Password: </label><input id="password" type="text" value="" />
+      <button onclick="decrypt()">decrypt</button>
+   </div>
+   
+   <br />Decrypted Value: <br/>
+   <span id="decrypted"></span>
+</body>
+</html>
