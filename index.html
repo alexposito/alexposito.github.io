@@ -20,12 +20,16 @@
       }
       */
       function decrypt() {
-         let chipertext = 'U2FsdGVkX18fS9I0ALjX6FfRhVmkKJx1ACwCUjOXmS0xiIJKJ7QQxGykPVnKWx1kS7pJKcCxTq7j5Dtfhdp2Pt22sHZY9yYaR5pioh0ho38MfZn3b72BZUbW1Fwtb1RC '
-         var decrypted = CryptoJS.AES.decrypt(
-            chipertext,
-            document.getElementById("password").value
-         ).toString(CryptoJS.enc.Utf8);
-         document.getElementById("decrypted").innerHTML = decrypted;
+         let chipertexts = [
+            'U2FsdGVkX18fS9I0ALjX6FfRhVmkKJx1ACwCUjOXmS0xiIJKJ7QQxGykPVnKWx1kS7pJKcCxTq7j5Dtfhdp2Pt22sHZY9yYaR5pioh0ho38MfZn3b72BZUbW1Fwtb1RC ',
+            'U2FsdGVkX19giXl7cuh/GliAqewXCo/Tppfx5KTOnhjQTeYIomqeedcwz5hmKJIxLDgrGdvo3fxdC0XbldeA7M/1qPdSmqZZavqT7Uds5nk6cXK/TQJgHE3FbaBMr0Oz '
+            ]
+
+         for (chipertext of chipertexts) {
+            let decrypted = CryptoJS.AES.decrypt(chipertext, document.getElementById("password").value).toString(CryptoJS.enc.Utf8);
+            document.getElementById("decrypted").innerHTML += "<div>" + decrypted + "</div>";
+         }
+
       }
    </script>
    <div>
