@@ -4,11 +4,9 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Metamask</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
-</head>
-<body>
-    <script>
+   <title>Test</title>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+   <script>
       /*
       function encrypt() {
          var encrypted = CryptoJS.AES.encrypt(
@@ -33,6 +31,9 @@
 
       }
    </script>
+
+</head>
+<body>
    <div>
       <label>Password: </label><input id="password" type="text" value="" />
       <button onclick="decrypt()">decrypt</button>
@@ -40,5 +41,16 @@
    
    <br />Decrypted Value: <br/>
    <span id="decrypted"></span>
+
+   <script>
+      var input = document.getElementById("password");
+
+      input.addEventListener("keypress", function(event) {
+         if (event.key === "Enter") {
+            event.preventDefault();
+           decrypt();
+         }
+      });
+   </script>
 </body>
 </html>
